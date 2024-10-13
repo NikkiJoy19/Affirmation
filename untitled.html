@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Positive Affirmations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        #affirmation {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Daily Positive Affirmations</h1>
+    <p id="greeting"></p>
+    <div id="affirmation">You are strong and capable!</div>
+    <button onclick="newAffirmation()">Get New Affirmation</button>
+
+    <script>
+        const affirmations = [
+            "You are enough just as you are.",
+            "Believe in yourself and your abilities.",
+            "You are capable of amazing things!",
+            "Every day is a fresh start.",
+            "Your feelings are valid.",
+            "You deserve happiness and peace.",
+            "Keep pushing forward. You’re doing great!"
+        ];
+
+        // Display a random affirmation
+        function newAffirmation() {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            document.getElementById('affirmation').innerText = affirmations[randomIndex];
+        }
+
+        // Optional: Add greeting if the user provides their name
+        const userName = prompt("What's your name?");
+        if (userName) {
+            document.getElementById('greeting').innerText = `Hi ${userName},`;
+        }
+    </script>
+
+</body>
+</html>
